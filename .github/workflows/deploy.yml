@@ -20,6 +20,6 @@ jobs:
           script: |
             cd /home/student01/myapp
             git clone https://github.com/${{ github.repository }} . 2>/dev/null || (git fetch && git reset --hard origin/main)
-            pip3 install -r requirements.txt
+            pip3 install -r requirements.txt --break-system-packages
             pkill -f 'python3 app.py' || true
             nohup python3 app.py > app.log 2>&1 &
