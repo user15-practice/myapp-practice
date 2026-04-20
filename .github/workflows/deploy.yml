@@ -15,10 +15,10 @@ jobs:
         uses: appleboy/ssh-action@v1.0.0
         with:
           host: telcation.f5.si
-          username: studentXX
+          username: student01
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /home/studentXX/myapp
+            cd /home/student01/myapp
             git clone https://github.com/${{ github.repository }} . 2>/dev/null || (git fetch && git reset --hard origin/main)
             pip3 install -r requirements.txt
             pkill -f 'python3 app.py' || true
