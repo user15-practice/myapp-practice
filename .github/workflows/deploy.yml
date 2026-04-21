@@ -24,4 +24,5 @@ jobs:
             sudo -u student01 git -C /home/student01/myapp reset --hard origin/main
             sudo -u student01 pip3 install -r /home/student01/myapp/requirements.txt --break-system-packages
             sudo pkill -u student01 -f 'python3 app.py' || true
+            sleep 2
             sudo -u student01 bash -c 'nohup python3 /home/student01/myapp/app.py > /home/student01/myapp/app.log 2>&1 & disown'
