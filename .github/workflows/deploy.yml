@@ -18,8 +18,8 @@ jobs:
           username: appuser
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /home/studentXX/myapp
-            sudo -u studentXX git clone https://github.com/${{ github.repository }} . 2>/dev/null || (sudo -u studentXX git fetch && sudo -u studentXX git reset --hard origin/main)
-            sudo -u studentXX pip3 install -r requirements.txt --break-system-packages
-            sudo pkill -u studentXX -f 'python3 app.py' || true
-            sudo -u studentXX nohup python3 /home/studentXX/myapp/app.py > /home/studentXX/myapp/app.log 2>&1 &
+            cd /home/student01/myapp
+            sudo -u student01 git clone https://github.com/${{ github.repository }} . 2>/dev/null || (sudo -u student01 git fetch && sudo -u student01 git reset --hard origin/main)
+            sudo -u student01 pip3 install -r requirements.txt --break-system-packages
+            sudo pkill -u student01 -f 'python3 app.py' || true
+            sudo -u student01 nohup python3 /home/student01/myapp/app.py > /home/student01/myapp/app.log 2>&1 &
