@@ -20,7 +20,7 @@ jobs:
           script_stop: false
           command_timeout: 60s
           script: |
-            sudo pkill -9 -u student01 -f 'python3 app.py' || true
+            sudo pkill -9 -u student01 -f 'app.py' || true
             sleep 2
             sudo -u student01 git -C /home/student01/myapp fetch
             sudo -u student01 git -C /home/student01/myapp reset --hard origin/main
